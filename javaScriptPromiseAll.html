@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript Promise All</title>    
+</head>
+<body>
+    <h4>ES6 Javascript Promise All</h4>
+    <script>
+        /*
+    // Example 1    
+    let pro_1 = new Promise(function(succese, reject){
+        setTimeout(()=> {
+            console.log('This is first promise');
+            succese('First promise working');
+        }, 1000);
+    });
+    
+    let pro_2 = new Promise(function(succese, reject){
+        setTimeout(()=> {
+            console.log('This is second promise');
+            succese('Second promise is not working');
+        }, 2000);
+    });
+
+    Promise.all([pro_1, pro_2]).then((succese) => {
+        console.log(succese);
+    }).catch((error)=>{
+        console.log(error);
+    });
+    */
+    // Example 2
+    console.log("==========================================");
+
+    let promiseAll = (successData, stepData, condition) => {
+
+        return function(succese, reject){
+            setTimeout(()=>{
+                if(condition === 'success') {
+                    console.log(`This is the ${stepData} promises. `);
+                    succese(`${stepData} promise working fine`);
+                } else {
+                    console.log(`This is the ${stepData} promise reject `);
+                    reject(`${stepData} promise data is not working`); 
+                }
+            } , successData * 100)
+        }
+    }
+
+    let pro_11 = new Promise(promiseAll(10, 'First', 'success'));
+    let pro_12 = new Promise(promiseAll(20, 'Second', 'success'));
+    let pro_13 = new Promise(promiseAll(30, 'Third', 'success'));
+
+    Promise.all([pro_11, pro_12, pro_13]).then((succese) => {
+        console.log(succese);
+    }).catch((error)=>{
+        console.log(error);
+    });
+
+    </script>
+    
+</body>
+</html>

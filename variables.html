@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Variables</title>
+    <script>
+        // Global Scope  
+        // var a = 'Manish';
+        // var a = 'Ramesh';
+        //a = 'Raman';
+
+        // Block Scope  
+        //let a = 'Manish';
+        //let a = 'Ramesh';
+        //a = 'Raman';
+
+        //const a = 'Manish';
+        //const a = 'Ramesh';
+        //a = 'Raman';
+
+        var x = 'Samir';
+        function show() {
+            if(true) {
+                var x = 'Rahul Var';
+            }
+            console.log(x);
+        }
+        show();
+        console.log(x);
+
+
+        if(true) {
+            let l = 'Rahul Let';
+            console.log(l);
+        }
+        //console.log(l);
+
+        if(true) {
+            let c = 'Rahul Const';
+            console.log(c);
+        }
+        //console.log(c);
+
+        
+        // 
+    </script>
+</head>
+<body>
+    <h4>ES6 Variables</h4>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Destructuring Object</title>
+</head>
+<body>
+    <h4>ES6 Destructuring Object</h4>
+    <script>
+        let obj = {
+            title : 'Javascript ES6',
+            Year : 2015
+        }
+        //console.log(obj)
+
+        let {title, Year} = obj
+        // Note: Use object key as a variable name for  Destructuring Object 
+        // other wise it will throw undefined error
+        console.log(title, Year);
+
+        // Note we can also rename/alias using Destructuring Object
+        let {title:name, Year:lanchYear} = obj;
+        console.log(name, lanchYear);
+    </script>
+    
+</body>
+</html>

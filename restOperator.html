@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator</title>
+    <script>
+
+       // Before ES6 
+
+       number = ['VIP',10,20,30,40,50,70, 'WIP'];
+       function getSum(prams) {
+        var total = 0;
+        for (var i = 0; i < prams.length; i++) {
+             total += prams[i];
+        }
+        console.log(total);
+        return total;
+          
+       }
+       console.log(getSum(number))
+
+       // Note if we will pass string then function will not work properly
+       // After ES6 
+
+       numbers = [170,50,40,30,'MST'];
+       function getSumv(title, ...args) {
+            let total = 0;        
+            for(let c in args) {
+                total += args[c]
+            }
+            console.log(total);
+            console.log(title);   
+       }
+       getSumv('VIP',10,20,30,50,'WIP')
+       getSumv(...numbers)
+
+    </script>
+</head>
+<body>
+    <h4>Example of Rest Operator</h4>
+    <p class="demo"></p>
+</body>
+</html>
+

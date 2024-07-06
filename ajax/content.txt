@@ -1,0 +1,1 @@
+Hi The error "Loading module from 'http://127.0.0.1:5501/modules.js' was blocked because of a disallowed MIME type ('text/html')" usually indicates that the server is not serving the JavaScript file with the correct MIME type. Instead of serving it as text/javascript, it is being served as text/html.

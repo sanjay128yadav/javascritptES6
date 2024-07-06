@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Object Literals</title>
+    <script>
+        let name = 'Sanjay'
+        let index = 'Manish'
+        let first_name = 'SKY'
+        // Before ES6
+        let obj = {
+            name: name
+        }
+        console.log(obj)
+
+        // After ES6
+
+        let obj1 = {
+            name
+        }
+
+        console.log(obj1)
+
+    // Create dynamic key using ES6
+    let key = index;
+    let n = key;
+    
+    let obj3 = {
+        [n] : 'Samir'
+    }
+    console.log(obj3);
+
+    let fname = 'Sanjay'
+    let age = 42
+
+    obj4 = {
+        fname,
+        age
+    }
+    console.log(obj4);
+
+    let x = first
+
+
+    let c = {
+        [x+"_name"] : "Sonu Kumar Yadav",
+        age : 28
+    }
+    console.log(c);
+    </script>
+</head>
+<body>
+    <h4>ES6 Object Literals</h4>
+</body>
+</html>

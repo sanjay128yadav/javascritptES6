@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Arrow Function</title>
+    <script>
+
+       // Before ES6 
+       var show = function(x) {
+            return "Hello friend "+x;
+       }
+
+       console.log(show('Sanjay'))
+
+        // After ES6
+        
+        let res = (v)=> { return "Hello mitra " + v}
+        console.log(res('Manish'));
+
+        let r  = (x) => "Hello dear "+x;
+        console.log(r("Sonu"));
+
+        const f =  p => "Hello dost "+ p
+        console.log(f("Golu"))
+        
+        let fun = p => `Hello Template String or Literal ${p}`
+        console.log(fun('Basic ES6'))
+
+    </script>
+</head>
+<body>
+    <h4>ES6 Arrow Function</h4>
+    <p class="demo"></p>
+</body>
+</html>
+

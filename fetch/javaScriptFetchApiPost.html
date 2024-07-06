@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript Post API</title>    
+</head>
+<body>
+    <h4>ES6 Javascript Fetch API</h4>  
+    <form action="" id="basicForm">
+        <label for="id">ID</label>
+        <input type="text" name="user_id" id="user_id"><br><br>
+        <label for="name">Name</label>
+        <input type="text" name="user_title" id="user_title"><br><br>
+        <label for="email">Email</label>
+        <input type="email" name="user_email" id="user_email"><br><br>
+
+        <input type="submit" value="Submit" id="submitForm">
+    </form>  
+    <script>
+    // Javascript Post API call
+
+    // Example 1 Direct pass data in JSON
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: 'Mr',
+            body: 'Monu',
+            userId: 1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json)); 
+
+        
+    // Example 2 Pass data using object obj
+
+    const obj = {
+            title: 'Mr',
+            body: 'Sanjay',
+            userId: 1,
+        }    
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify(obj),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));       
+
+
+    // Example 3 Pass data in JSON using form fields by getElementById
+
+    document.getElementById("submitForm").addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: document.getElementById("user_title").value,
+            body: document.getElementById("user_email").value,
+            userId: document.getElementById("user_id").value,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+    });  
+    
+    // Example 4 Pass Full form data in JSON through FormData
+
+    document.getElementById("submitForm").addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: new FormData(document.getElementById("basicForm")),
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded',
+            },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+        });  
+    </script>
+    
+</body>
+</html>

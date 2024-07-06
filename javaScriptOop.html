@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript OOP</title>
+</head>
+<body>
+    <h4>ES6 Javascript OOP</h4>
+    <script>
+       class Start {
+           constructor() {
+                console.log('Constructor!')
+           } 
+
+           count() {
+                console.log('Hello Everyone')
+           }  
+       }
+
+       let obj = new Start();
+       console.log(obj);
+       obj.count();
+
+       // Class example1
+       class Myself {
+            constructor() {
+                let name;
+                console.log('I am Constructor Function');
+            }
+
+            show() {
+                console.log('My name is :'+ this.name);
+            }
+       }
+
+       let obj1 = new Myself();
+       obj1.name = 'Sanjay Yadav';
+       obj1.show();
+
+       // Class example2
+       class AboutMySelf {
+            constructor(name, age) {
+                this.myname = name;
+                this.myAge  = age;
+                console.log('I am Constructor Function');
+            }
+
+            show() {
+                console.log('My name is :'+ this.myname + " and i am "+ this.myAge +" years old.");
+                console.log(`I am ${this.myname} & now I am ${this.myAge} years old.`);
+            }
+
+            static thirdMethod() {
+                console.log('Static Method call');
+            }
+       }
+
+       let obj2 = new AboutMySelf("Sonu Yadav",32);       
+       obj2.show();
+       AboutMySelf.thirdMethod();
+
+    </script>
+    
+</body>
+</html>

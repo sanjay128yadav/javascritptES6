@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript OOP-Inheritance</title>
+</head>
+<body>
+    <h4>ES6 Javascript OOP-Inheritance</h4>
+    <script>
+       class School {
+            constructor(name) {
+                console.log(`Constructor school: ${name}`);
+            }
+       }
+
+       class Professor extends School {
+            constructor(name) {                
+                console.log(`Constructor Teacher: ${name}`);
+                super();
+            }
+       }
+
+       let obj = new Professor('Delhi Gov School');
+
+       console.log("=================================");
+
+       // Second example
+
+       class Schools {
+            constructor(name) {
+                this.protitle = name;
+                console.log(`Constructor school: ${this.protitle}`);
+            }
+
+            students(){
+                console.log(`Student One Methos(Prototype): ${this.protitle}`);
+            }
+        }
+
+
+       class Professors extends Schools {
+            constructors(name) {  
+                
+            }
+            students(){
+                //super.students();
+                console.log(`Teachers Two Methos(Prototype): ${this.protitle}`);
+                super.students();
+            }
+       }
+
+       let objs = new Professors('Delhi Gov School');
+       objs.students();
+
+    </script>
+    
+</body>
+</html>

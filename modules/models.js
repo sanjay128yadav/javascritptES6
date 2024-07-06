@@ -1,0 +1,1 @@
+export let alert = "Hi Sanjay how are you!";

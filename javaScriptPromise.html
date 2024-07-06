@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript Promise</title>    
+</head>
+<body>
+    <h4>ES6 Javascript Promise</h4>
+    <script>
+       //Example 1
+       function pro(status) {
+        return  obj = new Promise(function(succese, reject) {
+            console.log('Loading...........');
+            setTimeout( () => {
+                if(status) {
+                    succese("Its working");
+                } else {
+                    reject("Its not working");
+                }
+            }, 2000);
+                
+        })
+       }
+
+       console.log(pro(true));
+
+       //Example 2
+
+       function bro(status) {
+        return  obj = new Promise(function(succese, reject) {
+            if(status) {
+                succese("Its working bro");
+            } else {
+                reject("Its not working bro");
+            }
+        })
+       }
+
+       let onFulfield = (succese) => {
+            console.log(succese);
+       }
+
+       let onReject = (reject) => {
+            console.log(reject);
+       }
+
+       // Below is called method chaining
+       bro(false).then(onFulfield).catch(onReject);
+
+    </script>
+    
+</body>
+</html>

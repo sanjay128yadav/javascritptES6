@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Destructuring Array</title>
+</head>
+<body>
+    <h4>ES6 Destructuring Array</h4>
+    <script>
+        // Before ES6
+        let data = ['Sanjay', 42, 'Ballia', ['MCA', 2005]]
+        let name = data[0];
+        let age  = data[1];
+
+        //console.log(name, age);
+
+        // After ES6
+        let [fname, eage = 21, city, [qualification, passingYear]] = data;
+        //console.log(fname, eage, city, qualification, passingYear);
+
+        // get one value and other in an array using Rest operator
+        let [emp_name, ...args] = data
+
+        console.log(emp_name, args);
+
+        // Destructuring Array using Function
+
+        function dataFun([name , age , city]) {
+            console.log(name);
+            console.log(age);
+            console.log(city);
+        }
+
+        dataFun(['Samir', '32', 'Allahabad']);
+
+        // Destructuring Array using Function with another way
+
+        function rdata(){
+            return ['Ramesh', 36, 'Jaunpur'];
+        }
+
+        let [rname, rage, rcity] = rdata();
+        console.log(rname);
+        console.log(rage);
+        console.log(rcity);
+
+    </script>
+    
+</body>
+</html>

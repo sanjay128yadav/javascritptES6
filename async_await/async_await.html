@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Async Await call</title>
+</head>
+<body>
+    <h4>Javascript Async Await call</h4>
+    <script>
+
+        // Example 1 Normal function 
+        function demo() {
+            //console.log("Helio every one");
+        }
+        demo();
+
+        // Example 2 Async Function
+        async function demos() {
+            return "Hi friends i am Sanjay Yaadv";
+        }
+
+        //console.log(demos());
+
+        demos().then((success) => {
+            console.log(success);
+        })
+
+        // Example 3 Using pass function in variable
+
+        let mydemo = async function basicdemo() {
+            return "Hi friends i am Sanjay Kumar Yaadv";
+        }
+
+        mydemo().then((success) => {
+            console.log(success);
+        })
+
+        // Example 4 Using Arrow function
+
+        let mydemos = async () => {
+            return "Hi friends i am Sonu Kumar Yaadv";
+        }
+
+        mydemos().then((success) => {
+            console.log(success);
+        })
+
+        console.log("===============================");
+
+        // Example 5 Async with await Function
+        async function basicDemo() {
+           console.log("Test 2:");
+           await console.log("Test 3:");
+           console.log("Test 4:");
+        }
+
+        console.log("Test 1:");
+
+        basicDemo();
+        console.log("Test 5:");
+
+    </script>
+    
+</body>
+</html>
