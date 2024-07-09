@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Async Await call</title>
+</head>
+<body>
+    <h4>Javascript Async Await call</h4>
+    <script>
+
+        /*
+        // Example 1 Async with await Function using fetch function
+        async function basicDemo() {
+           console.log("Test 2:");
+           const res = await fetch("product.json")
+           console.log("Test 3:");
+           const result = await res.json();
+           return result;
+        }
+
+        console.log("Test 1:");
+
+        const data =  basicDemo();
+        console.log("Test 4:");
+        console.log("Response: ",  data);
+         */
+        console.log("=============================");
+
+        // Example 2 Async with await Function using fetch function
+        async function asyncDemo() {           
+           const res    = await fetch("product.json")           
+           const result = await res.json();
+           return result;
+        }
+
+        const mydata =  asyncDemo();
+        
+        mydata.then((success) => {
+            console.log(success);
+        }).catch((error) =>{
+            console.log("Data not found!");
+        })
+       
+        // Example 3 Async with await Function using fetch function using short form
+        async function asyncShortDemo() {
+           return (await fetch("product.json")).json();
+        }
+
+        const mysdata =  asyncShortDemo();
+        
+        mysdata.then((success) => {
+            console.log(success);
+        }).catch((error) =>{
+            console.log("Here data not found!");
+        })
+
+    </script>
+    
+</body>
+</html>

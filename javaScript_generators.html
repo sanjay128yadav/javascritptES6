@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript Generators</title>
+</head>
+<body>
+    <h4>ES6 Javascript Generators</h4>
+    <script> 
+        // Example 1  
+        /*
+        function *gen(){
+
+            console.log("First");
+            yield("Second");
+            console.log("Third");
+            yield("Four");
+        }
+
+        let a = gen();
+        console.log(a.next());
+        console.log(a.next());
+        console.log(a.next());
+        */
+
+        // Example 2  
+        
+        function *generators(){
+
+        yield("One");
+        yield("Two");
+        yield("Three");
+        yield("Fourth");
+        }
+
+        
+        let b = generators();
+        /*
+        console.log(b.next());
+        b.next();
+        console.log(b.next());
+        b.next();
+        console.log(b.next());
+        */
+
+        for( let response of b ) {
+            //console.log(response);
+        }
+        
+        // Example 3 send dynamic arguments
+
+        function *mygen() {
+            let res = yield;
+            let divide = res / 10;
+
+            console.log(`Response: ${res} devide by 10 Res${divide}`);
+        }
+
+        let x = mygen();
+        x.next();
+        x.next(100);
+
+        // Example 4 send dynamic multipal arguments
+
+        function *mgen() {
+            let res = [yield, yield, yield, yield];            
+
+            console.log(`M Response: ${res}`);
+            console.log(`M Response: ${res[1]}`);
+        }
+
+        let y = mgen();
+        y.next();
+        y.next(100);
+        y.next(200);
+        y.next(300);
+        y.next(400);
+
+        // Example 5 send dynamic multipal arguments
+
+        function *mcgen() {
+            yield  700;  
+            
+            yield* ["js","nodejs", "Reactjs", "Python"];
+        }
+
+        let z = mcgen();
+        console.log(z.next());
+        console.log(z.next());
+        console.log(z.next());
+        console.log(z.next());
+        console.log(z.next());
+        console.log(z.next());
+       
+        // Example 5 Spreade operator with generator
+
+        function *sopwithGen(){
+
+            yield  320;
+            yield "js";
+            yield "nodejs";
+            yield "Reactjs";
+            yield "Python";
+        }
+
+        let s = sopwithGen();
+        console.log(s.next())
+        console.log(s.return("Here usered return keyword"));
+        console.log([...s]);
+       
+    </script>
+    
+</body>
+</html>
